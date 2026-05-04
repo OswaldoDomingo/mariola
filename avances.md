@@ -27,3 +27,8 @@
 #### 4. Nuevo recurso creado
 - **Qué se ha cambiado**: Se creó el archivo `web/templates/construccion.php`.
 - **Cómo ha queda**: Nueva página template para indicar que una sección está en desarrollo.
+
+#### 5. Cambio de texto en la cabecera de buscar alumno
+- **Qué se ha cambiado**: Se cambió el título para que se sepa qué se ha de poner para buscar un alumno.
+- **Cómo ha queda**: Ahora de lee "Ingrese ID del Alumno:" de esta forma se sabe que se ha de poner el ID.
+- **Mejoras**: Pondría un listado de los alumnos para no tener que saber el ID del alumno por anticipado.
