@@ -1,3 +1,10 @@
 .vscode
 .opencode
+.agents/
+.git_old/
+cenfor_bd.sql
+mariola.sql
+matematicas.sql
+skills-lock.json
+
 
