@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+/* -------------   nav -------------*/
+
+#nav-bar{
+    position: sticky;
+    top: 0;
+    /* background-image: linear-gradient(to right, #ffc74d,rgb(236, 187, 97)); */
+    padding: 0 !important;
+    /* background-color: #ffc74d; */
+    
+
+    
+}
+.loginform-nav{
+    height: 60px;
+}
+.navbar-nav li a{
+    font-weight: 600;
+    /* color: #fff; */
+    text-transform: uppercase;
+    float: right;
+    text-align: left;
+}
+.bi-list{
+/* color: #fff; */
+font-size:30px;
+}
+
+
+.login .container {
+    max-width: 500px;
+}
+
+/* Centrar el botón de enviar */
+.row.justify-content-center .col-auto {
+    display: flex;
+    justify-content: center;
+}

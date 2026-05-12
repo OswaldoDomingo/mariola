@@ -1,0 +1,59 @@
+.footer {
+    width: 100%;
+    background-color: #022331 !important;
+    color: rgb(230, 10, 10);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1px;
+    display: block;       /* ← evita que herede flex/grid del padre */
+    position: relative;   /* ← resetea cualquier posicionamiento heredado */
+}
+/* 1. Renombra footer-php → footer (o aplica los estilos a .footer) */
+.footer {
+    width: 100%;
+    background-color: #022331 !important;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    display: block;
+}
+
+/* 2. Asegura que container-custom centra su contenido */
+.container-custom {
+    width: 100%;
+    max-width: 1200px !important;
+    padding: 0 1rem;
+    margin: 0 auto !important;
+}
+
+/* El resto de tu CSS del footer está bien, no lo toques */
+.footer .border-highlight {
+    border-top: 1px solid var(--primary-color-highlight);
+}
+
+.footer-box .bi {
+    margin-right: 8px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+}
+
+.footer-box-iframe {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    border: 0;
+}
+.container-custom {
+    width: 100%;
+    max-width: 1200px; /* o el que uses */
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box; /* ← clave */
+    margin: 10px;
+}

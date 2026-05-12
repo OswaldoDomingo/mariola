@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    flex: 1;
+}
+
+.footer-php {
+    width: 100%;
+    background-color: #def200 !important; /* Color de fondo oscuro */
+    color: rgb(230, 10, 10); /* Color del texto */
+    text-align: center;
+    padding: 1rem;
+}
