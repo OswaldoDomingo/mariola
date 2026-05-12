@@ -1,0 +1,13 @@
+SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión0.52945900 1724315080
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'm' for key 'usuario'0.91256900 1724760337
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.alumnos' doesn't exist0.86061600 1777651414
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.alumnos' doesn't exist0.74630500 1777651426
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.alumnos' doesn't exist0.33028600 1777651518
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.alumnos' doesn't exist0.05550200 1777651548
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.alumnos' doesn't exist0.71776900 1777651844
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.10493200 1777652692
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.54244000 1777652698
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.57801900 1777652780
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.40718200 1777652880
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.16837800 1777653090
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mariola.matematicas' doesn't exist0.19388900 1777653095
