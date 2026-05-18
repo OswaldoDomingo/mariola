@@ -75,8 +75,7 @@ public function actualizarUsuario($id_alumno, $nombre, $apellidos, $usuario, $em
     $result->bindParam(':telefono', $telefono);
     $result->bindParam(':centro', $centro);
     $result->bindParam(':curso', $curso);
-    $result->execute();
-    return $result;
+    return $result->execute();
     
 
     
