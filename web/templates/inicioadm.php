@@ -178,7 +178,7 @@
         </li>
         <li class="list-group-item col-6">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="index.php?ctl=" class="d-block p-3 text-white bg-secondary">Química</a>
+                <a href="index.php?ctl=" class="d-block p-3">Química</a>
                 <div>
                     <a href="index.php?ctl=insertarQuimica" class="btn btn-success btn-sm me-1">
                         <i class="bi bi-plus-circle"></i>
