@@ -135,7 +135,7 @@ mariola/
 │   │   ├── style.css             # Estilos principales
 │   │   ├── estillogin.css        # Estilos del formulario de login
 │   │   ├── stylephp.css          # Estilos complementarios PHP/HTML
-│   │   └── oswaldo.css           # Estilos adicionales
+│   │   └── css-modificado.css    # Estilos adicionales
 │   ├── image/                    # Imágenes estáticas (19 archivos)
 │   ├── video/                    # Vídeos para el hero de la página
 │   └── audio/                    # Archivos de audio
