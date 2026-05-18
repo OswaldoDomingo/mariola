@@ -1,11 +1,10 @@
 <?php ob_start();
-if (isset($params['mensaje'])) {
-
-    echo $params['mensaje'];
+if (isset($params["mensaje"])) {
+    echo $params["mensaje"];
 }
 ?>
 
- <?php echo $_SESSION['usuario']?>
+ <?php echo $_SESSION["usuario"]; ?>
 
 
 
@@ -29,6 +28,6 @@ if (isset($params['mensaje'])) {
     </div>
 </div>
 
-<?php $contenido = ob_get_clean() ?>
+<?php $contenido = ob_get_clean(); ?>
 
-<?php include 'layout.php' ?>
+<?php include "layout.php"; ?>
