@@ -20,8 +20,8 @@ class Controller
     {
 
         $params = array(
-            'mensaje' => 'el tesxto está en el controler home, en el array params de home',
-            'mensaje2' => 'con menuHome',
+            'mensaje' => '',
+            'mensaje2' => '',
             'mensaje3' => 'y en la vista inicio, le marco el orden en el que se van a imprimir',
             'fecha' => date('d-m-Y')
         );
@@ -59,7 +59,7 @@ class Controller
     public function registro()
     {
 
-        //cargamos el menú 
+        //cargamos el menú
         $menu = $this->cargaMenu();
         if ($_SESSION['nivel_usuario'] > 0) {
             header("location:index.php?ctl=inicio");
@@ -115,7 +115,7 @@ class Controller
             cSelect($curso, 'curso', $errores, array_column($cursos, 'nombre', 'id_curso'), false);
 
             if (empty($errores)) {
-                // Si no hay errores, encriptamos la contraseña   
+                // Si no hay errores, encriptamos la contraseña
 
                 try {
 
@@ -175,7 +175,7 @@ class Controller
                 // validamos. Usamos las funciones que están en el archivo bGeneral
 
                 if (cUser($usuario, "usuario", $errores)) {
-                    // Si no ha habido problema creo modelo y hago consulta                    
+                    // Si no ha habido problema creo modelo y hago consulta
                     $m = new Alumno();
 
 
@@ -272,7 +272,7 @@ class Controller
                 'datos' => $datos,
                 'mensaje' => '',
                 'titulo' => $titulo,
-                'id_col' => ($tabla === 'matematicas') ? 'id_matematicas' : 
+                'id_col' => ($tabla === 'matematicas') ? 'id_matematicas' :
                             (($tabla === 'fisicaquimica') ? 'id_fisica-quimica' : 'id_' . $tabla)
             );
             if (!$params['datos'])
@@ -291,12 +291,12 @@ class Controller
 
     public function insertarAlumno()
     {
-    
- 
-        //cargamos el menú 
+
+
+        //cargamos el menú
         $menu = $this->cargaMenu();
-      
- 
+
+
         //inicializar la clase alumno para obtener el curso
         $m = new Alumno();
         $cursos = $m->listarCursos();
@@ -346,7 +346,7 @@ class Controller
             cSelect($curso, 'curso', $errores, array_column($cursos, 'nombre', 'id_curso'), false);
 
             if (empty($errores)) {
-                // Si no hay errores, encriptamos la contraseña   
+                // Si no hay errores, encriptamos la contraseña
 
                 try {
 
@@ -377,12 +377,12 @@ class Controller
 
         require __DIR__ . '/../../web/templates/insertarAlumno.php';
     }
-    
-    public function modificarAlumno($id_alumno = null) 
-        {       
+
+    public function modificarAlumno($id_alumno = null)
+        {
              // Cargamos el menú
                   $menu = $this->cargaMenu();
-        
+
             // Inicializamos el array de parámetros
                   $params = array(
                          'usuario' => '',
@@ -395,9 +395,9 @@ class Controller
                          'curso' => '',
                          'cursos' => []
                  );
-        
+
              $errores = array();
-             
+
              if ($id_alumno === null) {
                  // Si no se ha ingresado un usuario, mostramos el formulario para ingresar el usuario
                           if (isset($_POST['bBuscarUsuario'])) {
@@ -422,23 +422,23 @@ class Controller
                  }
              } else {
                  // Si ya se ha ingresado un usuario y se están actualizando los datos
-             
-             
-             
+
+
+
                   if(isset($_POST['bModificarAlumno'])){
                       $params['mensaje']= "El formulario se está enviando correctamente.";
                       // Recogemos y sanitizamos los datos
                       $nombre = recoge('nombre');
-                      
+
                       $apellidos = recoge('apellidos');
                       $email = recoge('email');
                       $pass = recoge('pass');
                       $telefono = recoge('telefono');
                       $centro = recoge('centro');
                       $curso = recoge('curso');
-                     
-                    
-                     
+
+
+
                      // Validamos los datos
                      cTexto($nombre, 'nombre', $errores);
                      cTexto($apellidos, 'apellidos', $errores);
@@ -447,20 +447,20 @@ class Controller
                      cNum($telefono, 'telefono', $errores);
                      cTexto($centro, 'centro', $errores);
                      cSelect($curso, 'curso', $errores, array_column($params['cursos'], 'nombre', 'id_curso'), false);
-         
-                     
+
+
                      if (empty($errores)) {
                          try {
                              $m = new Alumno();
                              $pass = encriptar($pass);
-                             
+
                              if ($m->actualizarUsuario($params['usuario'], $nombre, $apellidos, $usuario, $email, $pass, $telefono, $centro, $curso)) {
                                  $params['mensaje'] = "Datos modificados correctamente.";
-                       
-                                 
+
+
                              } else {
                                  $params['mensaje'] = "No se pudo modificar los datos.";
-                             
+
                              }
                          } catch (Exception $e) {
                              error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logException.txt");
@@ -474,7 +474,7 @@ class Controller
                      }
                  }
              }
-         
+
              // Incluimos la vista del formulario
              require __DIR__ . '/../../web/templates/modificarAlumno.php';
          }
@@ -493,4 +493,3 @@ class Controller
     {
     }
 }
-
