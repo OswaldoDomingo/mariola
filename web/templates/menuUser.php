@@ -3,7 +3,7 @@
 		<li class="nav-item ">
 			<a href="index.php?ctl=home" class="nav-link text-white">INICIO</a>
 		</li>
-		<li class="nav-item ">
+		<!-- <li class="nav-item ">
 			<a href="index.php?ctl=ciencias" class="nav-link text-white">CIENCIAS</a>
 		</li>
 		<li class="nav-item ">
@@ -11,7 +11,7 @@
 		</li>
 		<li class="nav-item ">
 			<a href="index.php?ctl=otros" class="nav-link text-white">OTROS</a>
-		</li>
+		</li> -->
 		<li class="nav-item ">
 			<a href="index.php?ctl=salir" class="nav-link text-white">CERRAR SESION</a>
 		</li>
