@@ -383,8 +383,13 @@ class Controller
              // Cargamos el menú
                   $menu = $this->cargaMenu();
 
+            // Inicializamos el modelo y los cursos
+                  $m = new Alumno();
+                  $cursos = $m->listarCursos();
+
             // Inicializamos el array de parámetros
                   $params = array(
+                         'id_alumno' => '',
                          'usuario' => '',
                          'nombre' => '',
                          'apellidos' => '',
@@ -393,10 +398,14 @@ class Controller
                          'telefono' => '',
                          'centro' => '',
                          'curso' => '',
-                         'cursos' => []
+                         'cursos' => $cursos
                  );
 
              $errores = array();
+
+             if (isset($_POST['bModificarAlumno'])) {
+                 $id_alumno = recoge('id_alumno');
+             }
 
              if ($id_alumno === null) {
                  // Si no se ha ingresado un usuario, mostramos el formulario para ingresar el usuario
@@ -406,61 +415,72 @@ class Controller
                               if (empty($id_alumno)) {
                                  $errores[] = "Debes ingresar un  id.";
                               } else {
-                                 $m = new Alumno();
                                  $alumno = $m->consultarAlumnoPorId($id_alumno);
                                  // print_r($alumno);me lo imprime
                                      if ($alumno) {
                                      // Cargamos los datos del alumno
                                      $params = array_merge($params, $alumno);
                                      // print_r($params);lo imprime
-                                     $params['cursos'] = $m->listarCursos();
+                                     $params['cursos'] = $cursos;
                                      $params['id_alumno'] = $alumno['id_alumno']; // Asegúrate de que el ID del alumno está asignado
                                      } else {
-                                      $errores[] = "No se encontró ningún alumno con el id usuario: $id_alumno.";
+                                      $errores[] = "No se encontró ningún alumno con el id usuario: " . $id_alumno . ".";
                                       }
                              }
                  }
              } else {
                  // Si ya se ha ingresado un usuario y se están actualizando los datos
-
-
-
                   if(isset($_POST['bModificarAlumno'])){
                       $params['mensaje']= "El formulario se está enviando correctamente.";
                       // Recogemos y sanitizamos los datos
                       $nombre = recoge('nombre');
-
                       $apellidos = recoge('apellidos');
+                      $usuario = recoge('usuario');
                       $email = recoge('email');
                       $pass = recoge('pass');
                       $telefono = recoge('telefono');
                       $centro = recoge('centro');
                       $curso = recoge('curso');
 
-
-
                      // Validamos los datos
+                     cNum($id_alumno, 'id_alumno', $errores);
                      cTexto($nombre, 'nombre', $errores);
                      cTexto($apellidos, 'apellidos', $errores);
+                     cUser($usuario, 'usuario', $errores);
                      cEmail($email, 'email', $errores);
-                     cUser($pass, 'pass', $errores);
+                     if ($pass !== '') {
+                         cUser($pass, 'pass', $errores);
+                     }
                      cNum($telefono, 'telefono', $errores);
                      cTexto($centro, 'centro', $errores);
-                     cSelect($curso, 'curso', $errores, array_column($params['cursos'], 'nombre', 'id_curso'), false);
+                     cSelect($curso, 'curso', $errores, array_column($cursos, 'nombre', 'id_curso'), false);
 
+                     $params = array_merge($params, array(
+                         'id_alumno' => $id_alumno,
+                         'nombre' => $nombre,
+                         'apellidos' => $apellidos,
+                         'usuario' => $usuario,
+                         'email' => $email,
+                         'telefono' => $telefono,
+                         'centro' => $centro,
+                         'curso' => $curso,
+                         'cursos' => $cursos
+                     ));
 
                      if (empty($errores)) {
                          try {
-                             $m = new Alumno();
-                             $pass = encriptar($pass);
+                             if ($pass !== '') {
+                                 $pass = encriptar($pass);
+                             } else {
+                                 $alumnoActual = $m->consultarAlumnoPorId($id_alumno);
+                                 $pass = $alumnoActual['pass'];
+                             }
 
-                             if ($m->actualizarUsuario($params['usuario'], $nombre, $apellidos, $usuario, $email, $pass, $telefono, $centro, $curso)) {
+                             if ($m->actualizarUsuario($id_alumno, $nombre, $apellidos, $usuario, $email, $pass, $telefono, $centro, $curso)) {
                                  $params['mensaje'] = "Datos modificados correctamente.";
-
 
                              } else {
                                  $params['mensaje'] = "No se pudo modificar los datos.";
-
                              }
                          } catch (Exception $e) {
                              error_log($e->getMessage() . microtime() . PHP_EOL, 3, "../app/log/logException.txt");

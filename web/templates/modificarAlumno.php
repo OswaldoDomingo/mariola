@@ -23,6 +23,7 @@
             "id_alumno"
         ]; ?>" method="post" name="actualizarUsuario"> -->
         <form action="index.php?ctl=modificarAlumno" method="post" name="actualizarUsuario">
+            <input type="hidden" name="id_alumno" value="<?php echo $params["id_alumno"]; ?>">
 
        <div class="row mb-3">
                 <div class="col-md-6">
@@ -49,7 +50,7 @@
                     <label for="password" class="form-label">Contraseña:</label>
                     <input type="password" id="password" name="pass" class="form-control" value="<?php
         //echo $params['pass'];
-        ?>" required>
+        ?>">
                 </div>
             </div>
               <div class="row mb-3">
