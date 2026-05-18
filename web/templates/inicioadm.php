@@ -1,4 +1,4 @@
-<?php ob_start() ?>
+<?php ob_start(); ?>
 
 
 
@@ -9,14 +9,15 @@
 
     <!--   CON  ICONOS -->
 
+<h1 class="text-center text-white bg-secondary">ADMINISTRAR ALUMNOS</h1>
 
     <div class="container mt-5">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-center">
 
-            <div>
+            <div class="text-center">
                 <!-- <a href="index.php?ctl=insertarAlumno" class="btn btn-success me-2"> -->
-                <a href="" class="btn btn-success me-2">
-                    
+                <a href="index.php?ctl=insertarAlumno" class="btn btn-success me-2">
+
                     <i class="bi bi-plus-circle"></i> <!-- Icono de añadir -->añadir
                 </a>
                 <!-- <a href="index.php?ctl=modificarAlumno" class="btn btn-warning me-2"> -->
@@ -24,11 +25,11 @@
                     <i class="bi bi-pencil-square"></i> <!-- Icono de modificar -->modificar
                 </a>
                 <!-- <a href="index.php?ctl=eliminarAlumno" class="btn btn-danger me-2"> -->
-                <a href="" class="btn btn-danger me-2">
+                <a href="index.php?ctl=eliminarAlumno" class="btn btn-danger me-2">
                     <i class="bi bi-trash"></i> <!-- Icono de eliminar -->eliminar
                 </a>
                 <!-- <a href="index.php?ctl=buscarAlumno" class="btn btn-info"> -->
-                <a href="" class="btn btn-info">
+                <a href="index.php?ctl=buscarAlumno" class="btn btn-info">
                     <i class="bi bi-search"></i> <!-- Icono de consultar -->consultar
                 </a>
             </div>
@@ -49,7 +50,7 @@
                 </li>
                 <li class="list-group-item"><a href="index.php?ctl=eliminarAlumno" class="d-block  p-3 ">Eliminar Alumno</a></li>
                 <li class="list-group-item"><a href="index.php?ctl=buscarAlumno" class="d-block p-3 text-white bg-secondary">Consultar Alumnos</a></li>
-                
+
             </ul>
         </div> -->
 
@@ -203,6 +204,6 @@
 </div>
 
 
-<?php $contenido = ob_get_clean() ?>
+<?php $contenido = ob_get_clean(); ?>
 
-<?php include 'layout.php' ?>
+<?php include "layout.php"; ?>
