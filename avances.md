@@ -1,5 +1,13 @@
 # Avances del Proyecto - Mariola
 
+## Fecha: 18 de mayo de 2026
+- Centrar el contenido de la página de inicio de administrador.
+- Eliminar del navegador del usuario "LETRAS" y "OTROS"
+- En el menú de Administrador poner la opción de administrar usuarios centrando los botones
+- Eliminar del menú de navegación "Insertar alumno", "Eliminar alumno", "Modificar alumno" y "Buscar alumno" 
+- Añadir rutas a los botones de administración de usuarios para que redirijan a las páginas correspondientes.
+
+
 ## Fecha: 04 de mayo de 2026
 
 ### Problemas Detectados y Solucionados
