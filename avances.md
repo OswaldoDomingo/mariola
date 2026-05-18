@@ -6,6 +6,10 @@
 - En el menú de Administrador poner la opción de administrar usuarios centrando los botones
 - Eliminar del menú de navegación "Insertar alumno", "Eliminar alumno", "Modificar alumno" y "Buscar alumno" 
 - Añadir rutas a los botones de administración de usuarios para que redirijan a las páginas correspondientes.
+- Corregir la modificación de alumnos para que se actualice por `id_alumno` y no por usuario.
+- Añadir campo oculto `id_alumno` al formulario de modificación de alumnos.
+- Hacer que la contraseña no sea obligatoria al modificar un alumno, conservando la contraseña actual si se deja vacía.
+- Ajustar `actualizarUsuario()` para que devuelva el resultado real de la ejecución del `UPDATE`.
 
 
 ## Fecha: 04 de mayo de 2026
