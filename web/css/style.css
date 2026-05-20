@@ -112,6 +112,11 @@ a:hover {
     z-index: 2;
 }
 
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
 
 /*************  FLYOUT NAVIGATION START  ************/
 #navbar {
@@ -158,6 +163,7 @@ a:hover {
 /****************  HERO   ***********************/
 .hero {
     position: relative;
+    z-index: 0;
     height: 100vh;
     background-color: var(--primary-color);
     overflow: hidden;
@@ -182,7 +188,10 @@ a:hover {
     min-height: 100%;
     width: auto;
     height: auto;
+    width: 100%;
+    height: 100%;
     transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
 }
 
 .hero__content {
@@ -225,6 +234,7 @@ a:hover {
 
 #carrusel {
     width: 100%;
+    height: 140px;
 }
 
 .carousel-item {
