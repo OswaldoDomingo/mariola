@@ -13,17 +13,13 @@
 
     <!-- estilos añadidos -->
     
-
-    <link rel="stylesheet" type="text/css" href="<?php echo 'css/' . Config::$mvc_vis_css[0]; ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo 'css/' . Config::$mvc_vis_css[1]; ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo 'css/' . Config::$mvc_vis_css[2]; ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo 'css/' . Config::$mvc_vis_css[3]; ?>" />
+    <?php Config::cargarCss(); ?>
 
 </head>
 
 <body>
 
-    <section id="nav-bar ">
+    <section id="nav-bar">
         <nav class="navbar navbar-expand-lg pt-0 ">
             <div class="container-fluid bg-secondary loginform-nav">
                 <a class="navbar-brand text-white fw-bold" href="/">CENFORλ</a>
@@ -34,14 +30,14 @@
                     <i class="bi bi-list"></i>
                 </button>
 
-
-                <?php
-
-                if (!isset($menu)) {
-                    $menu = 'menuHome.php';
-                }
-                include $menu;
-                ?>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <?php
+                    if (!isset($menu)) {
+                        $menu = 'menuHome.php';
+                    }
+                    include $menu;
+                    ?>
+                </div>
             </div>
 
         </nav>
@@ -50,9 +46,9 @@
 
     <div class="container-fluid">
         <div class="container">
-            <div id="contenido">
-                <?php echo $contenido ?>
-            </div>
+                         
+                <?php echo $contenido ?? ''; ?>
+
         </div>
     </div>
     <!-- AÑADIDO -->
@@ -96,8 +92,6 @@
         </ul>
     </div>
 
-</footer>
-    </section>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
