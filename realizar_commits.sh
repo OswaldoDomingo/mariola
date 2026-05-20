@@ -19,7 +19,14 @@ git add app/controlador/Controller.php web/templates/modificarAlumno.php
 git commit -m "fix(admin): corregir flujo de actualización de alumnos" -m "- El UPDATE ahora se realiza de forma segura por id_alumno (añadido como input hidden) y no por nombre de usuario.
 - La contraseña ya no es obligatoria al modificar; si se deja vacía, se conserva la existente."
 
-# 5. Documentación y archivos markdown
+# 5. Rediseño de la página de inicio y estilos
+git add app/libs/Config.php web/css/estillogin.css web/css/style.css web/templates/inicio.php web/templates/menuHome.php web/templates/menuInvitado.php web/templates/inicio-old.php
+git commit -m "ui(home): rediseño de la página de inicio y navegación pública" -m "- Se aplican nuevos estilos en style.css y estillogin.css.
+- Se actualiza la estructura de inicio.php y se guarda una copia de respaldo en inicio-old.php.
+- Se modifican los menús públicos para mejorar la visualización.
+- Se registran nuevos archivos CSS en Config.php."
+
+# 6. Documentación y archivos markdown
 git add avances.md informe_inicio.md presentacion.md realizar_commits.sh
 git commit -m "docs: actualizar manuales, informes y bitácora del proyecto" -m "Se documentan los avances recientes, resolución de bugs y se incorpora el script de commits."
 
