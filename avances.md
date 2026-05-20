@@ -1,5 +1,9 @@
 # Avances del Proyecto - Mariola
 
+## Fecha: 20 de mayo de 2026
+- Solucionado el error de *Undefined variable: contenido* en `layout.php` añadiendo el operador Null Coalescing (`?? ''`).
+- Creación del script para la automatización de commits quirúrgicos del proyecto.
+
 ## Fecha: 18 de mayo de 2026
 - Centrar el contenido de la página de inicio de administrador.
 - Eliminar del navegador del usuario "LETRAS" y "OTROS"
