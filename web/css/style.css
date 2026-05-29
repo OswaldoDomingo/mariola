@@ -125,7 +125,8 @@ a:hover {
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(255, 247, 231);
+    background-color: #333 !important;
+    color: #fff;
     z-index: 4;
 }
 
@@ -137,8 +138,17 @@ a:hover {
 }
 
 .dropdown-nav__container {
+    overflow-y: scroll;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+}
+.dropdown-nav__container {
     height: 100vh;
     padding: 0 1rem;
+    background-color: #333 !important;
+    color: #fff;
+    height: 100vh;
 }
 
 .fixed-image-size {

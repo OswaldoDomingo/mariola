@@ -1,6 +1,7 @@
-*{
-    margin:0;
-    padding: 0;
+/* Estilos para los enlaces del menú */
+.navbar-nav li a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
 }
 
 /* -------------   nav -------------*/
