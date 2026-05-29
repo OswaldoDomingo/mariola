@@ -57,3 +57,13 @@
     box-sizing: border-box; /* ← clave */
     margin: 10px;
 }
+/* custom-style.css */
+#navbar {
+  background-color: #333; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+}
+
+.dropdown-nav__container {
+  background-color: #333; /* Fondo oscuro */
+  color: #ffffff; /* Texto claro */
+}
