@@ -9,11 +9,23 @@
     --white-color: #ffffff;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .container-custom {
     width: 100%;
     max-width: 1200px;  /* ← esto es lo que faltaba */
     padding: 0 1rem;
     margin: 0 auto;
+}
+
+/* Envuelve el contenido principal para empujar el footer */
+main, .main-content {
+    flex: 1;
 }
 
 .highlight {
