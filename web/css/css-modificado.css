@@ -1,12 +1,11 @@
 .footer {
     width: 100%;
     background-color: #022331 !important;
-    color: rgb(230, 10, 10);
+    color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: 1px;
-    display: block;       /* ← evita que herede flex/grid del padre */
-    position: relative;   /* ← resetea cualquier posicionamiento heredado */
+    display: block;
+    margin-top: auto; /* Esto es clave en Flexbox para empujar al final */
 }
 /* 1. Renombra footer-php → footer (o aplica los estilos a .footer) */
 .footer {
